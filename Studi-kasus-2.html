@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Pak Noer - Catering Lezat & Terjangkau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        /* Custom checkbox style */
+        .custom-checkbox {
+            appearance: none;
+            background-color: #fff;
+            border: 2px solid #d1d5db;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.25rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #f59e0b;
+            border-color: #f59e0b;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: "✓";
+            color: white;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-utensils text-2xl text-amber-500 mr-2"></i>
+                <h1 class="text-xl font-bold text-gray-800">Kedai Pak Noer</h1>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-amber-600 font-medium hover:text-amber-700">Beranda</a>
+                <a href="#menu" class="text-gray-700 hover:text-amber-600">Menu</a>
+                <a href="#about" class="text-gray-700 hover:text-amber-600">Tentang Kami</a>
+                <a href="#testimoni" class="text-gray-700 hover:text-amber-600">Testimoni</a>
+                <a href="#kontak" class="text-gray-700 hover:text-amber-600">Kontak</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <button class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg font-medium transition-all">
+                    <i class="fas fa-shopping-cart mr-2"></i>Pesan Sekarang
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-amber-600">Beranda</a>
+            <a href="#menu" class="block py-2 text-gray-700 hover:text-amber-600">Menu</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-amber-600">Tentang Kami</a>
+            <a href="#testimoni" class="block py-2 text-gray-700 hover:text-amber-600">Testimoni</a>
+            <a href="#kontak" class="block py-2 text-gray-700 hover:text-amber-600">Kontak</a>
+            <button class="w-full mt-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg font-medium">
+                <i class="fas fa-shopping-cart mr-2"></i>Pesan Sekarang
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6 animate-fadeIn">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Makanan Lezat untuk Setiap Acara</h1>
+            <p class="text-xl md:text-2xl mb-8">Kedai Pak Noer menyediakan catering berkualitas dengan rasa rumahan yang autentik</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#menu" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-lg font-medium text-lg transition-all">Lihat Menu</a>
+                <a href="#kontak" class="bg-white hover:bg-gray-100 text-amber-600 px-6 py-3 rounded-lg font-medium text-lg transition-all">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="bg-amber-50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10 animate-fadeIn delay-100">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Promo Spesial!</h2>
+                <p class="text-gray-600">Diskon hingga 20% untuk pesanan pertama Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Promo 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all delay-100 hover:shadow-lg">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="bg-red-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-percentage text-red-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Diskon 20%</h3>
+                        </div>
+                        <p class="mt-4 text-gray-600">Untuk paket catering minimal 50 pax, dapatkan diskon 20% khusus pelanggan baru.</p>
+                    </div>
+                </div>
+                
+                <!-- Promo 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all delay-200 hover:shadow-lg">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-gift text-blue-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Gratis Snack</h3>
+                        </div>
+                        <p class="mt-4 text-gray-600">Pemesanan di atas 100 pax mendapatkan snack gratis untuk semua tamu.</p>
+                    </div>
+                </div>
+                
+                <!-- Promo 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all delay-300 hover:shadow-lg">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="bg-green-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-truck text-green-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Gratis Pengiriman</h3>
+                        </div>
+                        <p class="mt-4 text-gray-600">Gratis biaya pengiriman untuk wilayah Jakarta dan sekitarnya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fadeIn">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Menu Catering Kami</h2>
+                <p class="text-gray-600">Berbagai pilihan menu untuk memenuhi kebutuhan acara Anda</p>
+            </div>
+            
+            <!-- Menu Categories -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button data-category="all" class="menu-category px-4 py-2 text-sm font-medium rounded-l-lg bg-amber-500 text-white focus:z-10">Semua Menu</button>
+                    <button data-category="paket" class="menu-category px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50 focus:z-10">Paket Catering</button>
+                    <button data-category="prasmanan" class="menu-category px-4 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-50 focus:z-10">Prasmanan</button>
+                    <button data-category="nasi-box" class="menu-category px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-gray-700 hover:bg-gray-50 focus:z-10">Nasi Box</button>
+                </div>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition-all" data-category="paket">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1540298901673-ad0644b3034c?ixlib=rb-4.0.3" alt="Paket Hemat" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">Best Seller</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Paket Hemat</h3>
+                        <p class="text-gray-600 mb-4">Nasi putih, ayam goreng, tempe orek, sayur asem, sambal dan kerupuk.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp 25.000/pax</span>
+                            <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <i class="fas fa-plus mr-1"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition-all" data-category="paket">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3" alt="Paket Spesial" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Paket Spesial</h3>
+                        <p class="text-gray-600 mb-4">Nasi kuning, ayam pop, telur balado, perkedel kentang, sambal dan kerupuk.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp 35.000/pax</span>
+                            <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <i class="fas fa-plus mr-1"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition-all" data-category="prasmanan">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3" alt="Prasmanan Nikmat" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Prasmanan Nikmat</h3>
+                        <p class="text-gray-600 mb-4">Nasi putih, ayam bakar, ikan goreng, tempe kering, sambal terasi, lalapan dan 2 macam sayur.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp 45.000/pax</span>
+                            <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <i class="fas fa-plus mr-1"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 4 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition-all" data-category="nasi-box">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3" alt="Nasi Box Ekonomis" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">Best Seller</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Nasi Box Ekonomis</h3>
+                        <p class="text-gray-600 mb-4">Nasi putih, ayam goreng, telur dadar, perkedel kentang dan sambal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp 20.000/box</span>
+                            <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <i class="fas fa-plus mr-1"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 5 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition-all" data-category="nasi-box">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3" alt="Nasi Box Spesial" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Nasi Box Spesial</h3>
+                        <p class="text-gray-600 mb-4">Nasi kuning, ayam bakar, rendang daging, telur balado, perkedel kentang dan sambal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp 30.000/box</span>
+                            <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <i class="fas fa-plus mr-1"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 6 -->
+                <div class="menu-card bg-white rounded-lg shadow-md overflow-hidden transition-all" data-category="prasmanan">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3" alt="Prasmanan Mewah" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Prasmanan Mewah</h3>
+                        <p class="text-gray-600 mb-4">Nasi putih, ayam goreng, sapi lada hitam, capcay, sayur asam, timun, sambal dan 4 macam lauk.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp 65.000/pax</span>
+                            <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
+                                <i class="fas fa-plus mr-1"></i> Pesan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button id="load-more" class="bg-white border border-amber-500 text-amber-500 hover:bg-amber-50 px-6 py-3 rounded-lg font-medium transition-all">
+                    Lihat Lebih Banyak Menu
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8 animate-fadeIn">
+                    <img src="https://images.unsplash.com/photo-1600712243975-519b01c478b2?ixlib=rb-4.0.3" alt="Tentang Kedai Pak Noer" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2 animate-fadeIn delay-100">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Tentang Kedai Pak Noer</h2>
+                    <p class="text-gray-600 mb-4">Didirikan pada tahun 2010, Kedai Pak Noer telah melayani ribuan pelanggan dengan masakan rumahan yang lezat dan berkualitas. Kami memulai usaha kecil dari dapur rumah dan kini berkembang menjadi catering profesional.</p>
+                    <p class="text-gray-600 mb-6">Dengan resep turun temurun dan bahan-bahan pilihan, kami berkomitmen memberikan pengalaman makan terbaik untuk setiap acara spesial Anda.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Bahan Segar</h3>
+                                <p class="text-gray-600 text-sm">Menggunakan bahan-bahan segar yang dipilih langsung setiap hari</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Hygienis</h3>
+                                <p class="text-gray-600 text-sm">Proses masak yang bersih dan higienis sesuai standar kesehatan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Pengalaman</h3>
+                                <p class="text-gray-600 text-sm">Tim berpengalaman lebih dari 10 tahun di bidang catering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fadeIn">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Apa Kata Pelanggan Kami</h2>
+                <p class="text-gray-600">Testimoni dari klien yang telah menggunakan layanan kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimoni 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm animate-fadeIn delay-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Pelanggan" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ibu Rina</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Paketan hematnya enak banget dan porsinya banyak! Untuk acara arisan kemarin semua ibu-ibu pada suka. Harga terjangkau tapi kualitasnya premium."</p>
+                </div>
+                
+                <!-- Testimoni 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm animate-fadeIn delay-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Pelanggan" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Budi Santoso</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Prasmanan dari Kedai Pak Noer membuat acara kantor kami sukses besar. Makanannya lezat dan pelayanannya profesional sekali. Pasti akan order lagi di acara berikutnya!"</p>
+                </div>
+                
+                <!-- Testimoni 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm animate-fadeIn delay-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Pelanggan" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sari Dewi</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Nasi box untuk pernikahan adik saya pesan di sini. Rasanya enak dan packagingnya rapi. Tamu-tamu pada nanya ini pesan di mana karena penampilannya menarik."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-amber-500 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="animate-fadeIn delay-100">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">10+</div>
+                    <div class="text-sm md:text-base">Tahun Pengalaman</div>
+                </div>
+                <div class="animate-fadeIn delay-200">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">500+</div>
+                    <div class="text-sm md:text-base">Acara per Tahun</div>
+                </div>
+                <div class="animate-fadeIn delay-300">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">2.5K+</div>
+                    <div class="text-sm md:text-base">Pelanggan Setia</div>
+                </div>
+                <div class="animate-fadeIn delay-400">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">50+</div>
+                    <div class="text-sm md:text-base">Variasi Menu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-md overflow-hidden animate-fadeIn">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Pesan Catering Sekarang</h2>
+                        <p class="text-gray-600 mb-6">Isi form pesanan dan kami akan menghubungi Anda untuk konfirmasi pemesanan lebih lanjut.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone-alt text-amber-500 mr-3"></i>
+                                <span class="text-gray-800">+62 812 3456 7890</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-amber-500 mr-3"></i>
+                                <span class="text-gray-800">kedai.paknoer@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-amber-500 mr-3"></i>
+                                <span class="text-gray-800">Jl. Raya Kebayoran Lama No. 123, Jakarta Selatan</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-white p-8">
+                        <form id="order-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor HP</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="event-date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Acara</label>
+                                <input type="date" id="event-date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="menu-type" class="block text-sm font-medium text-gray-700 mb-1">Jenis Menu</label>
+                                <select id="menu-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                                    <option value="paket-hemat">Paket Hemat</option>
+                                    <option value="paket-spesial">Paket Spesial</option>
+                                    <option value="prasmanan-nikmat">Prasmanan Nikmat</option>
+                                    <option value="prasmanan-mewah">Prasmanan Mewah</option>
+                                    <option value="nasi-box-ekonomis">Nasi Box Ekonomis</option>
+                                    <option value="nasi-box-spesial">Nasi Box Spesial</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Jumlah Pesanan</label>
+                                <input type="number" id="quantity" min="10" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Catatan Tambahan</label>
+                                <textarea id="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <input type="checkbox" id="agree" class="custom-checkbox mr-2" required>
+                                <label for="agree" class="text-sm text-gray-700">Saya setuju dengan syarat dan ketentuan yang berlaku</label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white py-3 px-4 rounded-lg font-medium transition-all">
+                                Kirim Pesanan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fadeIn">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Galeri Kami</h2>
+                <p class="text-gray-600">Momen-momen spesial yang kami abadikan</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1556910638-aae3a7fb3c00?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1520218508822-998633d997e6?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed2043?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+                <a href="#gallery" class="gallery-item group">
+                    <img src="https://images.unsplash.com/photo-1693401174820-490cc26283af?ixlib=rb-4.0.3" alt="Catering" class="w-full h-48 object-cover rounded-lg group-hover:opacity-75 transition-all">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 animate-fadeIn">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Hubungi Kami</h2>
+                <p class="text-gray-600">Silakan hubungi kami untuk pertanyaan atau informasi lebih lanjut</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="animate-fadeIn delay-100">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Informasi Kontak</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt text-amber-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Alamat</h4>
+                                    <p class="text-gray-600">Jl. Raya Kebayoran Lama No. 123, Jakarta Selatan, DKI Jakarta 12240</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-phone-alt text-amber-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Telepon</h4>
+                                    <p class="text-gray-600">+62 812 3456 7890 (WhatsApp)</p>
+                                    <p class="text-gray-600">021 7654321</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-amber-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Email</h4>
+                                    <p class="text-gray-600">kedai.paknoer@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-clock text-amber-500 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Jam Buka</h4>
+                                    <p class="text-gray-600">Senin - Minggu: 08.00 - 17.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Ikuti Kami</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-full transition-all">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-full transition-all">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-full transition-all">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-3 rounded-full transition-all">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fadeIn delay-200">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm h-full">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Kirim Pesan</h3>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="contact-subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required>
+                            </div>
+                            
+                            <div>
+                                <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white py-3 px-4 rounded-lg font-medium transition-all">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.856992041999!2d106.78176677502017!3d-6.270411293734631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1a1942c8a9f%3A0x9db3d99de1e76f8b!2sKebayoran%20Lama%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1693401382185!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Floating Cart Button -->
+    <button id="cart-button" class="fixed bottom-6 right-6 bg-amber-500 text-white p-4 rounded-full shadow-lg hover:bg-amber-600 transition-all z-50">
+        <i class="fas fa-shopping-cart text-xl"></i>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+    </button>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40">
+        <div class="p-6 h-full flex flex-col">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-800">Keranjang Pesanan</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="flex-grow overflow-y-auto space-y-4">
+                <!-- Cart items will be added here dynamically -->
+                <p class="text-gray-500 text-center mt-12">Keranjang Anda masih kosong</p>
+            </div>
+            
+            <div class="mt-6 border-t pt-4">
+                <div class="flex justify-between mb-2">
+                    <span class="font-medium text-gray-700">Subtotal</span>
+                    <span id="cart-subtotal" class="font-medium">Rp 0</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                    <span class="text-gray-600 text-sm">Termasuk pajak dan ongkir</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-lg font-medium transition-all">
+                    Proses Pesanan (Rp 0)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-utensils text-amber-500 mr-2"></i>
+                        Kedai Pak Noer
+                    </h3>
+                    <p class="text-gray-400">Menyediakan catering dengan cita rasa autentik dan bahan-bahan berkualitas sejak 2010.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500 transition-all">Beranda</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-amber-500 transition-all">Menu</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition-all">Tentang Kami</a></li>
+                        <li><a href="#testimoni" class="text-gray-400 hover:text-amber-500 transition-all">Testimoni</a></li>
+                        <li><a href="#kontak" class="text-gray-400 hover:text-amber-500 transition-all">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Jam Buka</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Senin - Jumat</span>
+                            <span>08.00 - 17.00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sabtu - Minggu</span>
+                            <span>09.00 - 16.00</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4">
+                        <h4 class="font-medium mb-2">Pemesanan 24 Jam</h4>
+                        <p class="text-gray-400">WhatsApp: +62 812 3456 7890</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Dapatkan promo dan menu terbaru langsung ke email Anda.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-all">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Kedai Pak Noer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-gray-700 text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition-all hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 animate-fadeIn">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Pesanan Terkirim!</h3>
+                <p class="text-gray-600">Terima kasih atas pesanan Anda. Kami akan segera menghubungi Anda untuk konfirmasi lebih lanjut.</p>
+            </div>
+            <button id="close-modal" class="w-full bg-amber-500 hover:bg-amber-600 text-white py-2 rounded-lg font-medium transition-all">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Menu category filtering
+        const categoryButtons = document.querySelectorAll('.menu-category');
+        const menuItems = document.querySelectorAll('.menu-card');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-amber-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                });
+                
+                button.classList.add('bg-amber-500', 'text-white');
+                button.classList.remove('bg-white', 'text-gray-700');
+                
+                // Filter menu items
+                const category = button.dataset.category;
+                
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Cart functionality
+        let cartItems = [];
+        const cartButton = document.getElementById('cart-button');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCartButton = document.getElementById('close-cart');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const checkoutButton = document.getElementById('checkout-btn');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Toggle cart sidebar
+        cartButton.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-full');
+        });
+        
+        closeCartButton.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+        });
+        
+        // Add to cart functionality
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const menuCard = button.closest('.menu-card');
+                const itemName = menuCard.querySelector('h3').textContent;
+                const itemPriceText = menuCard.querySelector('span').textContent;
+                const itemPrice = parseInt(itemPriceText.replace(/\D/g, ''));
+                const itemImage = menuCard.querySelector('img').src;
+                
+                // Check if item already exists in cart
+                const existingItem = cartItems.find(item => item.name === itemName);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cartItems.push({
+                        name: itemName,
+                        price: itemPrice,
+                        quantity: 1,
+                        image: itemImage
+                    });
+                }
+                
+                updateCart();
+                cartSidebar.classList.remove('translate-x-full');
+                
+                // Show a small notification
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-24 right-6 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-fadeIn';
+                notification.textContent = ${itemName} ditambahkan ke keranjang!;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 2000);
+            });
+        });
+        
+        // Update cart display
+        function updateCart() {
+            // Update cart count
+            const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Update cart content
+            cartItemsContainer.innerHTML = '';
+            
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center mt-12">Keranjang Anda masih kosong</p>';
+                cartSubtotal.textContent = 'Rp 0';
+                checkoutButton.textContent = 'Proses Pesanan (Rp 0)';
+            } else {
+                let subtotal = 0;
+                
+                cartItems.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    subtotal += itemTotal;
+                    
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.className = 'flex items-start border-b pb-4';
+                    cartItemElement.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg mr-4">
+                        <div class="flex-grow">
+                            <h4 class="font-medium text-gray-800">${item.name}</h4>
+                            <p class="text-amber-600 font-semibold">Rp ${item.price.toLocaleString('id-ID')}</p>
+                            <div class="flex items-center mt-2">
+                                <button class="change-quantity px-2 text-gray-500 hover:text-amber-600" data-index="${index}" data-change="-1">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="quantity-display mx-2 w-8 text-center">${item.quantity}</span>
+                                <button class="change-quantity px-2 text-gray-500 hover:text-amber-600" data-index="${index}" data-change="1">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button class="remove-item ml-auto text-red-500 hover:text-red-700" data-index="${index}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+                
+                // Add event listeners to new buttons
+                document.querySelectorAll('.change-quantity').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        const change = parseInt(this.dataset.change);
+                        
+                        cartItems[index].quantity += change;
+                        
+                        // Remove item if quantity reaches 0
+                        if (cartItems[index].quantity <= 0) {
+                            cartItems.splice(index, 1);
+                        }
+                        
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.dataset.index);
+                        cartItems.splice(index, 1);
+                        updateCart();
+                    });
+                });
+                
+                cartSubtotal.textContent = Rp ${subtotal.toLocaleString('id-ID')};
+                checkoutButton.textContent = Proses Pesanan (Rp ${subtotal.toLocaleString('id-ID')});
+            }
+        }
+        
+        // Form submission
+        const orderForm = document.getElementById('order-form');
+        const contactForm = document.getElementById('contact-form');
+        const successModal = document.getElementById('success-modal');
+        const closeModalButton = document.getElementById('close-modal');
+        
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real app, you would send this data to your server
+            console.log('Order submitted:', {
+                name: this.name.value,
+                phone: this.phone.value,
+                eventDate: this['event-date'].value,
+                menuType: this['menu-type'].value,
+                quantity: this.quantity.value,
+                notes: this.notes.value
+            });
+            
+            // Reset form
+            this.reset();
+            
+            // Show success modal
+            successModal.classList.remove('hidden');
+        });
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real app, you would send this data to your server
+            console.log('Message submitted:', {
+                name: this['contact-name'].value,
+                email: this['contact-email'].value,
+                subject: this['contact-subject'].value,
+                message: this['contact-message'].value
+            });
+            
+            // Reset form
+            this.reset();
+            
+            // Show success modal
+            successModal.classList.remove('hidden');
+        });
+        
+        closeModalButton.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
+        
+        // Load more button
+        const loadMoreButton = document.getElementById('load-more');
+        let loadedItems = 6; // Initial loaded items
+        
+        loadMoreButton.addEventListener('click', () => {
+            // In a real app, you would fetch more items from your server
+            loadMoreButton.textContent = 'Loading...';
+            loadMoreButton.disabled = true;
+            
+            setTimeout(() => {
+                // Simulate loading more items
+                const additionalItems = [
+                    {
+                        category: 'prasmanan',
+                        name: 'Paket Spesial Syukuran',
+                        price: 50000,
+                        description: 'Nasi kuning, ayam goreng, empal daging, telur dadar, perkedel kentang, sambal dan kerupuk.'
+                    },
+                    {
+                        category: 'nasi-box',
+                        name: 'Nasi Box Premium',
+                        price: 35000,
+                        description: 'Nasi putih, ayam bakar, rendang daging, acar, sambal dan kerupuk.'
+                    },
+                    {
+                        category: 'paket',
+                        name: 'Paket Keluarga',
+                        price: 40000,
+                        description: 'Nasi putih, lele goreng, tahu tempe bacem, sayur asem, sambal dan lalapan.'
+                    }
+                ];
+                
+                // Just update the button in this demo (in real app, you would append these items)
+                loadMoreButton.textContent = 'Tidak Ada Menu Lain';
+                loadMoreButton.classList.remove('hover:bg-amber-50');
+                loadMoreButton.classList.add('cursor-not-allowed', 'opacity-50');
+            }, 1000);
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate-fadeIn');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
