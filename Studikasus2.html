@@ -291,7 +291,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-amber-600 font-bold">Rp 65.000/pax</span>
                             <button class="add-to-cart bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm transition-all">
-                                <i class="fas fa-plus mr-1"></i> Pesan
+                            <i class="fas fa-plus mr-1"></i> Pesan
                             </button>
                         </div>
                     </div>
@@ -920,7 +920,7 @@
                 // Show a small notification
                 const notification = document.createElement('div');
                 notification.className = 'fixed bottom-24 right-6 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg animate-fadeIn';
-                notification.textContent = ${itemName} ditambahkan ke keranjang!;
+                notification.textContent = `${itemName} ditambahkan ke keranjang!`;
                 document.body.appendChild(notification);
                 
                 setTimeout(() => {
@@ -1002,8 +1002,8 @@
                     });
                 });
                 
-                cartSubtotal.textContent = Rp ${subtotal.toLocaleString('id-ID')};
-                checkoutButton.textContent = Proses Pesanan (Rp ${subtotal.toLocaleString('id-ID')});
+                cartSubtotal.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+                checkoutButton.textContent = `Proses Pesanan (Rp ${subtotal.toLocaleString('id-ID')})`;
             }
         }
         
